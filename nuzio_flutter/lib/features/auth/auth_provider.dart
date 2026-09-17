@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/api_client.dart';
@@ -63,7 +64,18 @@ class AuthProvider extends ChangeNotifier {
       notifyListeners();
       return true;
     } catch (e) {
-      _error = 'Login failed. Please check your connection.';
+      debugPrint('Login error: $e');
+      if (e is DioException) {
+        if (e.type == DioExceptionType.connectionTimeout || e.type == DioExceptionType.receiveTimeout) {
+          _error = 'Server is waking up (Render free tier). Please try again in a few moments.';
+        } else if (e.response?.data is Map && e.response!.data['error'] != null) {
+          _error = e.response!.data['error'].toString();
+        } else {
+          _error = 'Login failed. Please check your connection.';
+        }
+      } else {
+        _error = 'Login failed. Please check your connection.';
+      }
       _loading = false;
       notifyListeners();
       return false;

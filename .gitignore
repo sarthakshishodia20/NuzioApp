@@ -22,3 +22,4 @@ nuzio_flutter/*.iml
 .DS_Store
 Thumbs.db
 *.log
+*.apk

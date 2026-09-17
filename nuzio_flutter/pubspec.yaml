@@ -1,0 +1,33 @@
+name: nuzio_flutter
+description: "Nuzio AI — Personalised Audio News App"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # HTTP
+  dio: ^5.5.0+1
+  # State management
+  provider: ^6.1.2
+  # Storage
+  shared_preferences: ^2.3.1
+  # Google fonts
+  google_fonts: ^6.2.1
+  # Icons
+  cupertino_icons: ^1.0.8
+  # Animations
+  flutter_animate: ^4.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/

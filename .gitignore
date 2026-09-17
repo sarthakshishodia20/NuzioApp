@@ -1,0 +1,24 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+*.sqlite
+
+# Flutter / Dart
+nuzio_flutter/.dart_tool/
+nuzio_flutter/.flutter-plugins
+nuzio_flutter/.flutter-plugins-dependencies
+nuzio_flutter/.packages
+nuzio_flutter/.pub-cache/
+nuzio_flutter/.pub/
+nuzio_flutter/build/
+nuzio_flutter/ios/Pods/
+nuzio_flutter/.idea/
+nuzio_flutter/*.iml
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
